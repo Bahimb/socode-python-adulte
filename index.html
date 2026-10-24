@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Python Quiz</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=JetBrains+Mono:wght@400;600&display=swap">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+  <div class="brand">
+    <span class="prompt">&gt;&gt;&gt;</span>
+    <h1>Python Quiz</h1>
+    <p>Answer one question at a time. You can't go back to change an answer.</p>
+  </div>
+
+  <section class="card" id="start">
+    <form id="start-form" class="stack">
+      <label class="field" for="name">Your name
+        <input id="name" type="text" maxlength="80" autocomplete="name" placeholder="First and last name" required>
+      </label>
+      <ul class="chips" id="topics"></ul>
+      <ul class="chips" id="levels"></ul>
+      <p class="hint" id="count-hint"></p>
+      <button type="submit">Start the test</button>
+      <p class="error" id="start-error"></p>
+    </form>
+  </section>
+
+  <section class="card" id="quiz" hidden>
+    <div class="bar"><div id="bar"></div></div>
+    <div class="meta">
+      <span id="counter"></span>
+      <span class="meta-tags"><span class="level" id="level"></span><span class="cat" id="cat"></span></span>
+    </div>
+    <p class="q" id="question"></p>
+    <div class="cell" id="cell" hidden><span class="in" id="cell-in"></span><pre><code id="code"></code></pre></div>
+    <div class="options" id="options" role="radiogroup" aria-labelledby="question"></div>
+    <button id="next" disabled>Next</button>
+  </section>
+
+  <section class="card" id="result" hidden>
+    <div class="score">
+      <span class="who" id="r-name"></span>
+      <span class="big" id="r-score"></span>
+      <span class="grade" id="r-grade"></span>
+    </div>
+    <h2>By level</h2>
+    <div class="rows" id="r-levels"></div>
+    <h2>By topic</h2>
+    <div class="rows" id="r-cats"></div>
+    <div class="actions">
+      <button id="copy">Copy my result</button>
+      <button class="secondary" id="restart">New student</button>
+      <span class="copied" id="copied" hidden></span>
+    </div>
+    <h2>Review</h2>
+    <div class="review" id="r-review"></div>
+  </section>
+</main>
+<script src="questions.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
